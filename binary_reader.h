@@ -4,28 +4,27 @@ namespace io {
     class binary_reader {
     public:
         binary_reader(uint8_t* buffer, uint32_t size)
-            : m_raw(buffer), m_size(size)
-        {}
+            : m_raw(buffer), m_size(size) {}
 
-		float read_float();
+        float read_float();
         double read_double();
 
-		short read_int16();
-		uint16_t read_uint16();
-        
-		int read_int24();
-		int read_int32();
-		uint32_t read_uint32();
+        short read_int16();
+        uint16_t read_uint16();
 
-		int64_t read_int64();
-		uint64_t read_uint64();
+        int read_int24();
+        int read_int32();
+        uint32_t read_uint32();
 
-	    char read_byte();
-		uint8_t read_ubyte();
-		bool read_bool();
+        int64_t read_int64();
+        uint64_t read_uint64();
 
-		const char* read_string(uint32_t size);
-		uint8_t* read_bytes(uint32_t size);
+        char read_byte();
+        uint8_t read_ubyte();
+        bool read_bool();
+
+        const char* read_string(uint32_t size);
+        uint8_t* read_bytes(uint32_t size);
 
         void reverse(uint8_t* buffer, uint32_t size);
         void copy(uint8_t* destination, uint32_t size);
